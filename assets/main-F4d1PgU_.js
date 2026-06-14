@@ -1882,7 +1882,7 @@ ${this.customData.serverResponse}`:this.message=this._baseMessage}}var Q;(functi
     <div style="grid-column:1/-1;padding:60px;text-align:center;">
       <p style="font-size:13px;color:#6B5B4E;font-weight:300;">No sessions found. Check back soon or <span style="color:#7C6F3E;cursor:pointer;" onclick="navigate('/host')">request to host one</span>.</p>
     </div>
-  `}function Xh(t,e,n){t.querySelectorAll(".filter-pill").forEach(i=>{i.addEventListener("click",()=>{t.querySelectorAll(".filter-pill").forEach(o=>o.classList.remove("active")),i.classList.add("active");const s=i.dataset.cat;t.querySelectorAll(".workshop-card").forEach(o=>{const r=s==="all"||o.dataset.category===s;o.style.display=r?"":"none"})})})}function Jh(){pr(".hero-child",200,90);const t=document.getElementById("stat-sessions"),e=document.getElementById("stat-hosts");t&&Es(t,48,1400),e&&Es(e,23,1200),setTimeout(()=>{document.querySelectorAll(".workshop-card").forEach((n,i)=>{setTimeout(()=>n.classList.add("visible"),i*100)})},600)}function Es(t,e,n){const i=performance.now();function s(o){const r=Math.min((o-i)/n,1);t.textContent=Math.round((1-Math.pow(1-r,3))*e),r<1&&requestAnimationFrame(s)}requestAnimationFrame(s)}async function Zh(t,e){if(!e){st("/");return}t.innerHTML=tu();const n=await hr(e);if(!n){t.innerHTML=nu();return}t.innerHTML=eu(n),iu(t,n),Vh(e,i=>{const s=document.getElementById("slot-count"),o=document.getElementById("slot-fill"),r=document.getElementById("slot-sub");s&&(s.textContent=i),o&&(o.style.width=`${Math.round((n.maxSlots-i)/n.maxSlots*100)}%`),r&&(r.textContent=`${i} of ${n.maxSlots} remaining`)})}function eu(t){var i,s;const e=t.slotsRemaining<=0,n=t.status==="coming_soon";return`
+  `}function Xh(t,e,n){t.querySelectorAll(".filter-pill").forEach(i=>{i.addEventListener("click",()=>{t.querySelectorAll(".filter-pill").forEach(o=>o.classList.remove("active")),i.classList.add("active");const s=i.dataset.cat;t.querySelectorAll(".workshop-card").forEach(o=>{const r=s==="all"||o.dataset.category===s;o.style.display=r?"":"none"})})})}function Jh(){pr(".hero-child",200,90);const t=document.getElementById("stat-sessions"),e=document.getElementById("stat-hosts");t&&Es(t,48,1400),e&&Es(e,23,1200),setTimeout(()=>{document.querySelectorAll(".workshop-card").forEach((n,i)=>{setTimeout(()=>n.classList.add("visible"),i*100)})},600)}function Es(t,e,n){const i=performance.now();function s(o){const r=Math.min((o-i)/n,1);t.textContent=Math.round((1-Math.pow(1-r,3))*e),r<1&&requestAnimationFrame(s)}requestAnimationFrame(s)}async function Zh(t,e){if(!e){st("/");return}t.innerHTML=tu();const n=await hr(e);if(!n){t.innerHTML=nu();return}t.innerHTML=eu(n),iu(t,n),Vh(e,i=>{const s=document.getElementById("slot-count"),o=document.getElementById("slot-fill"),r=document.getElementById("slot-sub");s&&(s.textContent=i),o&&(o.style.width=`${Math.round((n.maxSlots-i)/n.maxSlots*100)}%`),r&&(r.textContent=`${i} of ${n.maxSlots} remaining`)})}function eu(t){var r,a;const e=t.slotsRemaining<=0,n=t.status==="coming_soon",i="919876543210",s=encodeURIComponent(`Hi! I'd like to join the waitlist for ${t.title} on ${t.date}. Please let me know if a slot opens up.`),o=`https://wa.me/${i}?text=${s}`;return`
     ${wt()}
 
     <!-- BACK -->
@@ -1909,7 +1909,7 @@ ${this.customData.serverResponse}`:this.message=this._baseMessage}}var Q;(functi
         <p style="font-size:10px;letter-spacing:0.14em;text-transform:uppercase;color:#7C6F3E;margin-bottom:8px;">Workshop</p>
         <h1 style="font-size:32px;font-weight:200;color:#1A1410;line-height:1.1;letter-spacing:-0.02em;margin-bottom:10px;">${t.title}</h1>
         <div style="display:flex;align-items:center;gap:8px;margin-bottom:22px;">
-          <div class="card-host-avatar">${t.hostPhoto?`<img src="${t.hostPhoto}" alt="${t.hostName}" style="width:100%;height:100%;object-fit:cover;">`:((i=t.hostName)==null?void 0:i.charAt(0))||"H"}</div>
+          <div class="card-host-avatar">${t.hostPhoto?`<img src="${t.hostPhoto}" alt="${t.hostName}" style="width:100%;height:100%;object-fit:cover;">`:((r=t.hostName)==null?void 0:r.charAt(0))||"H"}</div>
           <span style="font-size:12px;color:#6B5B4E;">Hosted by ${t.hostName}${t.hostRole?" · "+t.hostRole:""}</span>
         </div>
         <div style="height:0.5px;background:#D4C9BC;margin-bottom:22px;"></div>
@@ -1934,7 +1934,7 @@ ${this.customData.serverResponse}`:this.message=this._baseMessage}}var Q;(functi
         ${t.thingsToKnow&&t.thingsToKnow.length?`
           <p style="font-size:12px;font-weight:500;color:#1A1410;margin-bottom:10px;letter-spacing:0.02em;">Things to know</p>
           <div style="display:flex;gap:8px;flex-wrap:wrap;margin-bottom:22px;">
-            ${t.thingsToKnow.map(o=>`<span class="badge badge-category" style="padding:4px 10px;font-size:10px;">${o}</span>`).join("")}
+            ${t.thingsToKnow.map(l=>`<span class="badge badge-category" style="padding:4px 10px;font-size:10px;">${l}</span>`).join("")}
           </div>
         `:""}
 
@@ -1945,7 +1945,7 @@ ${this.customData.serverResponse}`:this.message=this._baseMessage}}var Q;(functi
           <p class="host-block-label">Your host</p>
           <div style="display:flex;align-items:flex-start;gap:16px;">
             <div class="host-avatar">
-              ${t.hostPhoto?`<img src="${t.hostPhoto}" alt="${t.hostName}">`:((s=t.hostName)==null?void 0:s.charAt(0))||"H"}
+              ${t.hostPhoto?`<img src="${t.hostPhoto}" alt="${t.hostName}">`:((a=t.hostName)==null?void 0:a.charAt(0))||"H"}
             </div>
             <div>
               <span class="host-badge">
@@ -2015,7 +2015,7 @@ ${this.customData.serverResponse}`:this.message=this._baseMessage}}var Q;(functi
               <p style="font-size:10px;color:#6B5B4E;margin-top:3px;">Registration opens soon</p>
             </div>
           `:e?`
-            <button class="btn-cta" style="width:100%;justify-content:center;margin-bottom:8px;" onclick="window.open('https://wa.me/919876543210?text=${encodeURIComponent("Hi! I'd like to join the waitlist for "+t.title+" on "+t.date+". Please let me know if a slot opens up.")}','_blank')">
+            <button class="btn-cta" style="width:100%;justify-content:center;margin-bottom:8px;" onclick="window.open('${o}','_blank')">
               <div class="ink"></div><span>Join Waitlist</span>
             </button>
           `:`
@@ -2054,7 +2054,7 @@ ${this.customData.serverResponse}`:this.message=this._baseMessage}}var Q;(functi
         <div class="mobile-book-bar-price">${W(t.price)}</div>
         <div class="mobile-book-bar-slots">${e?"Fully booked":`${t.slotsRemaining} slots left`}</div>
       </div>
-      ${e?'<button class="btn-cta btn-sm"><div class="ink"></div><span>Join Waitlist</span></button>':`<button class="btn-cta btn-sm" onclick="navigate('/book?id=${t.id}')"><div class="ink"></div><span>Book Your Slot</span></button>`}
+      ${e?`<button class="btn-cta btn-sm" onclick="window.open('${o}','_blank')"><div class="ink"></div><span>Join Waitlist</span></button>`:`<button class="btn-cta btn-sm" onclick="navigate('/book?id=${t.id}')"><div class="ink"></div><span>Book Your Slot</span></button>`}
     </div>`}
 
     ${cn()}
