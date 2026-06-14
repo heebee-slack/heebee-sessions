@@ -2015,7 +2015,7 @@ ${this.customData.serverResponse}`:this.message=this._baseMessage}}var Q;(functi
               <p style="font-size:10px;color:#6B5B4E;margin-top:3px;">Registration opens soon</p>
             </div>
           `:e?`
-            <button class="btn-cta" style="width:100%;justify-content:center;margin-bottom:8px;">
+            <button class="btn-cta" style="width:100%;justify-content:center;margin-bottom:8px;" onclick="window.open('https://wa.me/919876543210?text=${encodeURIComponent("Hi! I'd like to join the waitlist for "+t.title+" on "+t.date+". Please let me know if a slot opens up.")}','_blank')">
               <div class="ink"></div><span>Join Waitlist</span>
             </button>
           `:`
