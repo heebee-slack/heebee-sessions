@@ -1,4 +1,4 @@
-(function(){const e=document.createElement("link").relList;if(e&&e.supports&&e.supports("modulepreload"))return;for(const s of document.querySelectorAll('link[rel="modulepreload"]'))i(s);new MutationObserver(s=>{for(const o of s)if(o.type==="childList")for(const r of o.addedNodes)r.tagName==="LINK"&&r.rel==="modulepreload"&&i(r)}).observe(document,{childList:!0,subtree:!0});function n(s){const o={};return s.integrity&&(o.integrity=s.integrity),s.referrerPolicy&&(o.referrerPolicy=s.referrerPolicy),s.crossOrigin==="use-credentials"?o.credentials="include":s.crossOrigin==="anonymous"?o.credentials="omit":o.credentials="same-origin",o}function i(s){if(s.ep)return;s.ep=!0;const o=n(s);fetch(s.href,o)}})();function ve(t){return new Date(t).toLocaleDateString("en-IN",{weekday:"short",day:"numeric",month:"long",year:"numeric"})}function Me(t){const[e,n]=t.split(":"),i=parseInt(e);return`${i>12?i-12:i}:${n} ${i>=12?"PM":"AM"}`}function H(t){return"₹ "+Number(t).toLocaleString("en-IN")}function fr(t){return t===0?"Fully booked":t<=3?`${t} slots left`:`${t} slots left`}function pr(t,e=200,n=90){document.querySelectorAll(t).forEach((i,s)=>{i.style.opacity=0,i.style.transform="translateY(20px)",i.style.transition="none",setTimeout(()=>{i.style.transition="opacity 0.5s cubic-bezier(0.16,1,0.3,1), transform 0.5s cubic-bezier(0.16,1,0.3,1)",i.style.opacity=1,i.style.transform="translateY(0)"},e+s*n)})}function gr(){const t=new IntersectionObserver(e=>{e.forEach(n=>{n.isIntersecting&&n.target.classList.add("drawn")})},{threshold:.1});document.querySelectorAll(".draw-line").forEach(e=>t.observe(e))}function mr(){document.querySelectorAll(".btn-ink").forEach(t=>{const e=t.querySelector(".ink"),n=t.querySelector("span");e&&(t.addEventListener("mouseenter",()=>{e.style.left="0",n&&(n.style.color="#F2EDE6")}),t.addEventListener("mouseleave",()=>{e.style.left="-100%",n&&(n.style.color="")}))})}function _r(){const t=window.location.hash.replace("#","")||"/",[e,...n]=t.split("?"),i={};return n.join("?").split("&").forEach(s=>{const[o,r]=s.split("=");o&&(i[o]=decodeURIComponent(r||""))}),{path:e,params:i}}function st(t,e={}){const n=Object.entries(e).map(([i,s])=>`${i}=${encodeURIComponent(s)}`).join("&");window.location.hash=t+(n?"?"+n:"")}function yr(){return"#HB-"+new Date().getFullYear()+"-"+String(Math.floor(Math.random()*9e3)+1e3)}var Ii={};/**
+(function(){const e=document.createElement("link").relList;if(e&&e.supports&&e.supports("modulepreload"))return;for(const s of document.querySelectorAll('link[rel="modulepreload"]'))i(s);new MutationObserver(s=>{for(const o of s)if(o.type==="childList")for(const r of o.addedNodes)r.tagName==="LINK"&&r.rel==="modulepreload"&&i(r)}).observe(document,{childList:!0,subtree:!0});function n(s){const o={};return s.integrity&&(o.integrity=s.integrity),s.referrerPolicy&&(o.referrerPolicy=s.referrerPolicy),s.crossOrigin==="use-credentials"?o.credentials="include":s.crossOrigin==="anonymous"?o.credentials="omit":o.credentials="same-origin",o}function i(s){if(s.ep)return;s.ep=!0;const o=n(s);fetch(s.href,o)}})();function ve(t){return new Date(t).toLocaleDateString("en-IN",{weekday:"short",day:"numeric",month:"long",year:"numeric"})}function Me(t){const[e,n]=t.split(":"),i=parseInt(e);return`${i>12?i-12:i}:${n} ${i>=12?"PM":"AM"}`}function W(t){return"₹ "+Number(t).toLocaleString("en-IN")}function fr(t){return t===0?"Fully booked":t<=3?`${t} slots left`:`${t} slots left`}function pr(t,e=200,n=90){document.querySelectorAll(t).forEach((i,s)=>{i.style.opacity=0,i.style.transform="translateY(20px)",i.style.transition="none",setTimeout(()=>{i.style.transition="opacity 0.5s cubic-bezier(0.16,1,0.3,1), transform 0.5s cubic-bezier(0.16,1,0.3,1)",i.style.opacity=1,i.style.transform="translateY(0)"},e+s*n)})}function gr(){const t=new IntersectionObserver(e=>{e.forEach(n=>{n.isIntersecting&&n.target.classList.add("drawn")})},{threshold:.1});document.querySelectorAll(".draw-line").forEach(e=>t.observe(e))}function mr(){document.querySelectorAll(".btn-ink").forEach(t=>{const e=t.querySelector(".ink"),n=t.querySelector("span");e&&(t.addEventListener("mouseenter",()=>{e.style.left="0",n&&(n.style.color="#F2EDE6")}),t.addEventListener("mouseleave",()=>{e.style.left="-100%",n&&(n.style.color="")}))})}function _r(){const t=window.location.hash.replace("#","")||"/",[e,...n]=t.split("?"),i={};return n.join("?").split("&").forEach(s=>{const[o,r]=s.split("=");o&&(i[o]=decodeURIComponent(r||""))}),{path:e,params:i}}function st(t,e={}){const n=Object.entries(e).map(([i,s])=>`${i}=${encodeURIComponent(s)}`).join("&");window.location.hash=t+(n?"?"+n:"")}function yr(){return"#HB-"+new Date().getFullYear()+"-"+String(Math.floor(Math.random()*9e3)+1e3)}var Ii={};/**
  * @license
  * Copyright 2017 Google LLC
  *
@@ -946,7 +946,7 @@ FIREBASE: `))}restoreState_(){this.tryAuth(),this.tryAppCheck();for(const e of t
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
  * See the License for the specific language governing permissions and
  * limitations under the License.
- */const ec=Math.log(2);class tc{constructor(e){const n=o=>parseInt(Math.log(o)/ec,10),i=o=>parseInt(Array(o+1).join("1"),2);this.count=n(e+1),this.current_=this.count-1;const s=i(this.count);this.bits_=e+1&s}nextBitIsOne(){const e=!(this.bits_&1<<this.current_);return this.current_--,e}}const Mt=function(t,e,n,i){t.sort(e);const s=function(l,c){const h=c-l;let d,u;if(h===0)return null;if(h===1)return d=t[l],u=n?n(d):d,new O(u,d.node,O.BLACK,null,null);{const p=parseInt(h/2,10)+l,g=s(l,p),E=s(p+1,c);return d=t[p],u=n?n(d):d,new O(u,d.node,O.BLACK,g,E)}},o=function(l){let c=null,h=null,d=t.length;const u=function(g,E){const x=d-g,z=d;d-=g;const Z=s(x+1,z),W=t[x],F=n?n(W):W;p(new O(F,W.node,E,null,Z))},p=function(g){c?(c.left=g,c=g):(h=g,c=g)};for(let g=0;g<l.count;++g){const E=l.nextBitIsOne(),x=Math.pow(2,l.count-(g+1));E?u(x,O.BLACK):(u(x,O.BLACK),u(x,O.RED))}return h},r=new tc(t.length),a=o(r);return new U(i||e,a)};/**
+ */const ec=Math.log(2);class tc{constructor(e){const n=o=>parseInt(Math.log(o)/ec,10),i=o=>parseInt(Array(o+1).join("1"),2);this.count=n(e+1),this.current_=this.count-1;const s=i(this.count);this.bits_=e+1&s}nextBitIsOne(){const e=!(this.bits_&1<<this.current_);return this.current_--,e}}const Mt=function(t,e,n,i){t.sort(e);const s=function(l,c){const h=c-l;let d,u;if(h===0)return null;if(h===1)return d=t[l],u=n?n(d):d,new O(u,d.node,O.BLACK,null,null);{const p=parseInt(h/2,10)+l,g=s(l,p),E=s(p+1,c);return d=t[p],u=n?n(d):d,new O(u,d.node,O.BLACK,g,E)}},o=function(l){let c=null,h=null,d=t.length;const u=function(g,E){const x=d-g,z=d;d-=g;const Z=s(x+1,z),H=t[x],F=n?n(H):H;p(new O(F,H.node,E,null,Z))},p=function(g){c?(c.left=g,c=g):(h=g,c=g)};for(let g=0;g<l.count;++g){const E=l.nextBitIsOne(),x=Math.pow(2,l.count-(g+1));E?u(x,O.BLACK):(u(x,O.BLACK),u(x,O.RED))}return h},r=new tc(t.length),a=o(r);return new U(i||e,a)};/**
  * @license
  * Copyright 2017 Google LLC
  *
@@ -1652,7 +1652,7 @@ ${this.customData.serverResponse}`:this.message=this._baseMessage}}var Q;(functi
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
  * See the License for the specific language governing permissions and
  * limitations under the License.
- */class Y{constructor(e,n){this.bucket=e,this.path_=n}get path(){return this.path_}get isRoot(){return this.path.length===0}fullServerUrl(){const e=encodeURIComponent;return"/b/"+e(this.bucket)+"/o/"+e(this.path)}bucketOnlyServerUrl(){return"/b/"+encodeURIComponent(this.bucket)+"/o"}static makeFromBucketSpec(e,n){let i;try{i=Y.makeFromUrl(e,n)}catch{return new Y(e,"")}if(i.path==="")return i;throw yh(e)}static makeFromUrl(e,n){let i=null;const s="([A-Za-z0-9.\\-_]+)";function o(F){F.path.charAt(F.path.length-1)==="/"&&(F.path_=F.path_.slice(0,-1))}const r="(/(.*))?$",a=new RegExp("^gs://"+s+r,"i"),l={bucket:1,path:3};function c(F){F.path_=decodeURIComponent(F.path)}const h="v[A-Za-z0-9_]+",d=n.replace(/[.]/g,"\\."),u="(/([^?#]*).*)?$",p=new RegExp(`^https?://${d}/${h}/b/${s}/o${u}`,"i"),g={bucket:1,path:3},E=n===ar?"(?:storage.googleapis.com|storage.cloud.google.com)":n,x="([^?#]*)",z=new RegExp(`^https?://${E}/${s}/${x}`,"i"),W=[{regex:a,indices:l,postModify:o},{regex:p,indices:g,postModify:c},{regex:z,indices:{bucket:1,path:2},postModify:c}];for(let F=0;F<W.length;F++){const ge=W[F],Se=ge.regex.exec(e);if(Se){const It=Se[ge.indices.bucket];let Te=Se[ge.indices.path];Te||(Te=""),i=new Y(It,Te),ge.postModify(i);break}}if(i==null)throw _h(e);return i}}class bh{constructor(e){this.promise_=Promise.reject(e)}getPromise(){return this.promise_}cancel(e=!1){}}/**
+ */class Y{constructor(e,n){this.bucket=e,this.path_=n}get path(){return this.path_}get isRoot(){return this.path.length===0}fullServerUrl(){const e=encodeURIComponent;return"/b/"+e(this.bucket)+"/o/"+e(this.path)}bucketOnlyServerUrl(){return"/b/"+encodeURIComponent(this.bucket)+"/o"}static makeFromBucketSpec(e,n){let i;try{i=Y.makeFromUrl(e,n)}catch{return new Y(e,"")}if(i.path==="")return i;throw yh(e)}static makeFromUrl(e,n){let i=null;const s="([A-Za-z0-9.\\-_]+)";function o(F){F.path.charAt(F.path.length-1)==="/"&&(F.path_=F.path_.slice(0,-1))}const r="(/(.*))?$",a=new RegExp("^gs://"+s+r,"i"),l={bucket:1,path:3};function c(F){F.path_=decodeURIComponent(F.path)}const h="v[A-Za-z0-9_]+",d=n.replace(/[.]/g,"\\."),u="(/([^?#]*).*)?$",p=new RegExp(`^https?://${d}/${h}/b/${s}/o${u}`,"i"),g={bucket:1,path:3},E=n===ar?"(?:storage.googleapis.com|storage.cloud.google.com)":n,x="([^?#]*)",z=new RegExp(`^https?://${E}/${s}/${x}`,"i"),H=[{regex:a,indices:l,postModify:o},{regex:p,indices:g,postModify:c},{regex:z,indices:{bucket:1,path:2},postModify:c}];for(let F=0;F<H.length;F++){const ge=H[F],Se=ge.regex.exec(e);if(Se){const It=Se[ge.indices.bucket];let Te=Se[ge.indices.path];Te||(Te=""),i=new Y(It,Te),ge.postModify(i);break}}if(i==null)throw _h(e);return i}}class bh{constructor(e){this.promise_=Promise.reject(e)}getPromise(){return this.promise_}cancel(e=!1){}}/**
  * @license
  * Copyright 2017 Google LLC
  *
@@ -1667,7 +1667,7 @@ ${this.customData.serverResponse}`:this.message=this._baseMessage}}var Q;(functi
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
  * See the License for the specific language governing permissions and
  * limitations under the License.
- */function Eh(t,e,n){let i=1,s=null,o=null,r=!1,a=0;function l(){return a===2}let c=!1;function h(...x){c||(c=!0,e.apply(null,x))}function d(x){s=setTimeout(()=>{s=null,t(p,l())},x)}function u(){o&&clearTimeout(o)}function p(x,...z){if(c){u();return}if(x){u(),h.call(null,x,...z);return}if(l()||r){u(),h.call(null,x,...z);return}i<64&&(i*=2);let W;a===1?(a=2,W=0):W=(i+Math.random())*1e3,d(W)}let g=!1;function E(x){g||(g=!0,u(),!c&&(s!==null?(x||(a=2),clearTimeout(s),d(0)):x||(a=1)))}return d(0),o=setTimeout(()=>{r=!0,E(!0)},n),E}function xh(t){t(!1)}/**
+ */function Eh(t,e,n){let i=1,s=null,o=null,r=!1,a=0;function l(){return a===2}let c=!1;function h(...x){c||(c=!0,e.apply(null,x))}function d(x){s=setTimeout(()=>{s=null,t(p,l())},x)}function u(){o&&clearTimeout(o)}function p(x,...z){if(c){u();return}if(x){u(),h.call(null,x,...z);return}if(l()||r){u(),h.call(null,x,...z);return}i<64&&(i*=2);let H;a===1?(a=2,H=0):H=(i+Math.random())*1e3,d(H)}let g=!1;function E(x){g||(g=!0,u(),!c&&(s!==null?(x||(a=2),clearTimeout(s),d(0)):x||(a=1)))}return d(0),o=setTimeout(()=>{r=!0,E(!0)},n),E}function xh(t){t(!1)}/**
  * @license
  * Copyright 2017 Google LLC
  *
@@ -1771,8 +1771,8 @@ ${this.customData.serverResponse}`:this.message=this._baseMessage}}var Q;(functi
     ${wt("sessions")}
 
     <!-- HERO -->
-    <div style="display:grid;grid-template-columns:1fr 1fr;min-height:280px;">
-      <div style="padding:52px 48px;display:flex;flex-direction:column;justify-content:center;">
+    <div class="hero-grid" style="display:grid;grid-template-columns:1fr 1fr;min-height:280px;">
+      <div class="hero-left" style="padding:52px 48px;display:flex;flex-direction:column;justify-content:center;">
         <p class="hero-child section-eyebrow" style="margin-bottom:14px;">Workshops · Talks · Experiences</p>
         <h1 class="hero-child" style="font-size:42px;font-weight:200;color:#1A1410;line-height:1.05;letter-spacing:-0.02em;margin-bottom:14px;">
           Learn something<br><em style="font-style:italic;font-weight:300;color:#7C6F3E;">new</em> at Heebee
@@ -1789,7 +1789,7 @@ ${this.customData.serverResponse}`:this.message=this._baseMessage}}var Q;(functi
           </button>
         </div>
       </div>
-      <div class="textured" style="background:#E8E0D5;display:flex;align-items:center;justify-content:center;gap:40px;">
+      <div class="hero-right textured" style="background:#E8E0D5;display:flex;align-items:center;justify-content:center;gap:40px;">
         <div style="text-align:center;">
           <div id="stat-sessions" style="font-size:44px;font-weight:200;color:#1A1410;letter-spacing:-0.03em;line-height:1;">0</div>
           <div style="font-size:10px;letter-spacing:0.1em;text-transform:uppercase;color:#6B5B4E;margin-top:5px;">Sessions hosted</div>
@@ -1830,7 +1830,7 @@ ${this.customData.serverResponse}`:this.message=this._baseMessage}}var Q;(functi
     </div>
 
     <!-- HOST CTA STRIP -->
-    <div style="background:#1A1410;padding:48px;display:flex;align-items:center;justify-content:space-between;">
+    <div class="cta-strip" style="background:#1A1410;padding:48px;display:flex;align-items:center;justify-content:space-between;">
       <div>
         <p style="font-size:10px;letter-spacing:0.14em;text-transform:uppercase;color:#7C6F3E;margin-bottom:8px;">Open to everyone</p>
         <h2 style="font-size:28px;font-weight:200;color:#F2EDE6;letter-spacing:-0.01em;margin-bottom:8px;">Got something worth sharing?</h2>
@@ -1866,7 +1866,7 @@ ${this.customData.serverResponse}`:this.message=this._baseMessage}}var Q;(functi
         </div>
         <div class="card-footer">
           <div>
-            <p class="card-price">${H(t.price)}</p>
+            <p class="card-price">${W(t.price)}</p>
             <p class="card-slots">${e?"Registration opening soon":n?"Join waitlist":fr(t.slotsRemaining)}</p>
           </div>
           ${e?"":`
@@ -1886,7 +1886,7 @@ ${this.customData.serverResponse}`:this.message=this._baseMessage}}var Q;(functi
     ${wt()}
 
     <!-- BACK -->
-    <div style="padding:14px 48px;border-bottom:0.5px solid #D4C9BC;">
+    <div class="back-bar" style="padding:14px 48px;border-bottom:0.5px solid #D4C9BC;">
       <span style="font-size:11px;color:#6B5B4E;cursor:pointer;display:inline-flex;align-items:center;gap:6px;" onclick="navigate('/')">
         <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="19" y1="12" x2="5" y2="12"/><polyline points="12 19 5 12 12 5"/></svg>
         All Sessions
@@ -1894,7 +1894,7 @@ ${this.customData.serverResponse}`:this.message=this._baseMessage}}var Q;(functi
     </div>
 
     <!-- HERO IMAGE -->
-    <div style="height:280px;background:#E0D8CE;position:relative;overflow:hidden;display:flex;align-items:center;justify-content:center;">
+    <div class="detail-hero" style="height:280px;background:#E0D8CE;position:relative;overflow:hidden;display:flex;align-items:center;justify-content:center;">
       ${t.coverImage?`<img src="${t.coverImage}" alt="${t.title}" style="width:100%;height:100%;object-fit:cover;">`:'<svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="#B8A99A" stroke-width="1.5" stroke-linecap="round"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>'}
       <span style="position:absolute;top:16px;left:48px;" class="badge badge-category">${t.category}</span>
       ${!n&&!e?`<span style="position:absolute;top:16px;right:48px;" class="badge badge-live">${t.slotsRemaining} slots left</span>`:""}
@@ -1902,10 +1902,10 @@ ${this.customData.serverResponse}`:this.message=this._baseMessage}}var Q;(functi
     </div>
 
     <!-- MAIN LAYOUT -->
-    <div style="display:grid;grid-template-columns:1fr 300px;gap:0;padding:0 48px;">
+    <div class="page-layout" style="display:grid;grid-template-columns:1fr 300px;gap:0;padding:0 48px;">
 
       <!-- LEFT CONTENT -->
-      <div style="padding:32px 40px 40px 0;">
+      <div class="page-content" style="padding:32px 40px 40px 0;">
         <p style="font-size:10px;letter-spacing:0.14em;text-transform:uppercase;color:#7C6F3E;margin-bottom:8px;">Workshop</p>
         <h1 style="font-size:32px;font-weight:200;color:#1A1410;line-height:1.1;letter-spacing:-0.02em;margin-bottom:10px;">${t.title}</h1>
         <div style="display:flex;align-items:center;gap:8px;margin-bottom:22px;">
@@ -1915,7 +1915,7 @@ ${this.customData.serverResponse}`:this.message=this._baseMessage}}var Q;(functi
         <div style="height:0.5px;background:#D4C9BC;margin-bottom:22px;"></div>
 
         <!-- META GRID -->
-        <div style="display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-bottom:24px;">
+        <div class="meta-grid-cols" style="display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-bottom:24px;">
           ${Re("Calendar",ve(t.date))}
           ${Re("Clock",`${Me(t.time)}${t.duration?" — "+t.duration:""}`)}
           ${Re("Map-pin",t.outlet)}
@@ -1974,11 +1974,11 @@ ${this.customData.serverResponse}`:this.message=this._baseMessage}}var Q;(functi
       </div>
 
       <!-- SIDEBAR -->
-      <div style="padding:32px 0 40px;">
+      <div class="page-sidebar" style="padding:32px 0 40px;">
         <div class="summary-card" style="position:sticky;top:80px;">
           <!-- PRICE -->
           <div style="display:flex;align-items:baseline;gap:6px;margin-bottom:6px;">
-            <span style="font-family:'DM Mono',monospace;font-size:28px;color:#7C6F3E;">${H(t.price)}</span>
+            <span style="font-family:'DM Mono',monospace;font-size:28px;color:#7C6F3E;">${W(t.price)}</span>
             <span style="font-size:11px;color:#6B5B4E;">per slot</span>
           </div>
 
@@ -2047,6 +2047,16 @@ ${this.customData.serverResponse}`:this.message=this._baseMessage}}var Q;(functi
 
     </div>
 
+    <!-- MOBILE BOOK BAR -->
+    ${n?"":`
+    <div class="mobile-book-bar">
+      <div>
+        <div class="mobile-book-bar-price">${W(t.price)}</div>
+        <div class="mobile-book-bar-slots">${e?"Fully booked":`${t.slotsRemaining} slots left`}</div>
+      </div>
+      ${e?'<button class="btn-cta btn-sm"><div class="ink"></div><span>Join Waitlist</span></button>':`<button class="btn-cta btn-sm" onclick="navigate('/book?id=${t.id}')"><div class="ink"></div><span>Book Your Slot</span></button>`}
+    </div>`}
+
     ${cn()}
   `}function Re(t,e){return`
     <div style="display:flex;align-items:flex-start;gap:10px;">
@@ -2080,10 +2090,10 @@ ${this.customData.serverResponse}`:this.message=this._baseMessage}}var Q;(functi
     </div>
 
     <!-- MAIN LAYOUT -->
-    <div style="display:grid;grid-template-columns:1fr 300px;gap:0;padding:0 48px;min-height:70vh;">
+    <div class="page-layout" style="display:grid;grid-template-columns:1fr 300px;gap:0;padding:0 48px;min-height:70vh;">
 
       <!-- STEP PANELS -->
-      <div style="padding:32px 40px 40px 0;">
+      <div class="page-content" style="padding:32px 40px 40px 0;">
 
         <!-- STEP 1: DETAILS -->
         <div id="panel1">
@@ -2097,7 +2107,7 @@ ${this.customData.serverResponse}`:this.message=this._baseMessage}}var Q;(functi
           <div style="display:flex;align-items:center;justify-content:space-between;padding:12px 16px;background:#fff;border:0.5px solid #D4C9BC;border-radius:8px;margin-bottom:20px;">
             <div>
               <p style="font-size:12px;font-weight:500;color:#1A1410;">Ticket for <span id="tcount-lbl">1</span></p>
-              <p style="font-size:10px;color:#6B5B4E;margin-top:2px;">${H(_.price)} per person</p>
+              <p style="font-size:10px;color:#6B5B4E;margin-top:2px;">${W(_.price)} per person</p>
             </div>
             <div style="display:flex;align-items:center;gap:14px;">
               <button id="btn-minus" style="width:28px;height:28px;border-radius:50%;border:0.5px solid #D4C9BC;background:#F2EDE6;font-size:16px;color:#1A1410;cursor:pointer;display:flex;align-items:center;justify-content:center;font-weight:300;transition:all 0.2s;" onmouseenter="this.style.background='#1A1410';this.style.color='#F2EDE6';" onmouseleave="this.style.background='#F2EDE6';this.style.color='#1A1410';">−</button>
@@ -2135,7 +2145,7 @@ ${this.customData.serverResponse}`:this.message=this._baseMessage}}var Q;(functi
       </div>
 
       <!-- SIDEBAR SUMMARY -->
-      <div style="padding:32px 0 40px;">
+      <div class="page-sidebar" style="padding:32px 0 40px;">
         <div class="summary-card" style="position:sticky;top:80px;">
           <!-- WS IMAGE -->
           <div style="height:80px;background:#E8E0D5;border-radius:8px;margin-bottom:14px;overflow:hidden;display:flex;align-items:center;justify-content:center;">
@@ -2150,7 +2160,7 @@ ${this.customData.serverResponse}`:this.message=this._baseMessage}}var Q;(functi
           <div style="height:0.5px;background:#E8E0D5;margin-bottom:12px;"></div>
           <div style="display:flex;justify-content:space-between;margin-bottom:6px;">
             <span style="font-size:10px;color:#B8A99A;">Price per ticket</span>
-            <span style="font-size:11px;color:#1A1410;">${H(_.price)}</span>
+            <span style="font-size:11px;color:#1A1410;">${W(_.price)}</span>
           </div>
           <div style="display:flex;justify-content:space-between;margin-bottom:6px;">
             <span style="font-size:10px;color:#B8A99A;">Tickets</span>
@@ -2162,7 +2172,7 @@ ${this.customData.serverResponse}`:this.message=this._baseMessage}}var Q;(functi
           </div>
           <div style="display:flex;justify-content:space-between;align-items:baseline;margin-top:12px;padding-top:12px;border-top:0.5px solid #E8E0D5;">
             <span style="font-size:12px;font-weight:500;color:#1A1410;">Total</span>
-            <span style="font-family:'DM Mono',monospace;font-size:20px;color:#7C6F3E;" id="sum-total">${H(_.price)}</span>
+            <span style="font-family:'DM Mono',monospace;font-size:20px;color:#7C6F3E;" id="sum-total">${W(_.price)}</span>
           </div>
         </div>
       </div>
@@ -2181,15 +2191,15 @@ ${this.customData.serverResponse}`:this.message=this._baseMessage}}var Q;(functi
         </div>
       </div>
       <div style="display:flex;justify-content:space-between;padding:10px 0;border-top:0.5px solid #F2EDE6;">
-        <span style="font-size:11px;color:#6B5B4E;" id="rp-ticket-line">1 ticket × ${H(_.price)}</span>
-        <span style="font-family:'DM Mono',monospace;font-size:13px;color:#7C6F3E;" id="rp-total">${H(_.price)}</span>
+        <span style="font-size:11px;color:#6B5B4E;" id="rp-ticket-line">1 ticket × ${W(_.price)}</span>
+        <span style="font-family:'DM Mono',monospace;font-size:13px;color:#7C6F3E;" id="rp-total">${W(_.price)}</span>
       </div>
     </div>
     <button id="pay-btn" style="display:block;width:100%;padding:12px;border-radius:6px;border:0.5px solid #D4C9BC;background:#ffffff;font-family:'Outfit',sans-serif;font-size:13px;font-weight:500;letter-spacing:0.02em;cursor:pointer;position:relative;overflow:hidden;"
       onmouseenter="this.querySelector('.ink').style.left='0';this.querySelector('.lbl').style.color='#F2EDE6';"
       onmouseleave="this.querySelector('.ink').style.left='-100%';this.querySelector('.lbl').style.color='#1A1410';">
       <div class="ink" style="position:absolute;top:0;left:-100%;width:100%;height:100%;background:#7C6F3E;transition:left 0.35s cubic-bezier(0.77,0,0.175,1);z-index:1;"></div>
-      <span class="lbl" id="pay-btn-label" style="position:relative;z-index:2;color:#1A1410;transition:color 0.15s ease 0.15s;">Pay ${H(_.price)} via Razorpay →</span>
+      <span class="lbl" id="pay-btn-label" style="position:relative;z-index:2;color:#1A1410;transition:color 0.15s ease 0.15s;">Pay ${W(_.price)} via Razorpay →</span>
     </button>
   `}function au(){return`
     <div style="background:#fff;border:0.5px solid #D4C9BC;border-radius:10px;padding:24px;display:flex;flex-direction:column;align-items:center;gap:12px;margin-bottom:16px;">
@@ -2198,7 +2208,7 @@ ${this.customData.serverResponse}`:this.message=this._baseMessage}}var Q;(functi
         ${_.qrImage?`<img src="${_.qrImage}" alt="UPI QR" style="width:100%;height:100%;object-fit:contain;border-radius:8px;">`:'<svg width="80" height="80" viewBox="0 0 24 24" fill="none" stroke="#D4C9BC" stroke-width="1" stroke-linecap="round"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/><rect x="14" y="14" width="3" height="3"/></svg>'}
       </div>
       <p style="font-size:11px;color:#6B5B4E;text-align:center;line-height:1.6;">
-        Pay <strong style="color:#7C6F3E;" id="qr-total">${H(_.price)}</strong> to complete booking.
+        Pay <strong style="color:#7C6F3E;" id="qr-total">${W(_.price)}</strong> to complete booking.
       </p>
       <p style="font-size:10px;color:#B8A99A;text-align:center;">After payment, tap the button below to confirm.</p>
     </div>
@@ -2250,12 +2260,12 @@ ${this.customData.serverResponse}`:this.message=this._baseMessage}}var Q;(functi
         <input class="field-input attendee-instagram" data-idx="${t}" type="text" placeholder="@handle">
       </div>
     </div>
-  `}function xn(){const t=document.getElementById("attendee-forms");t&&(t.innerHTML=Array.from({length:N},(e,n)=>cu(n+1,N)).join(""))}function xs(){const t=N*_.price,e=H(t),n=i=>document.getElementById(i);n("tcount")&&(n("tcount").textContent=N),n("tcount-lbl")&&(n("tcount-lbl").textContent=N),n("sum-tickets")&&(n("sum-tickets").textContent=N),n("sum-total")&&(n("sum-total").textContent=e),n("rp-ticket-line")&&(n("rp-ticket-line").textContent=`${N} ticket${N>1?"s":""} × ${H(_.price)}`),n("rp-total")&&(n("rp-total").textContent=e),n("qr-total")&&(n("qr-total").textContent=e),n("pay-btn-label")&&(n("pay-btn-label").textContent=`Pay ${e} via Razorpay →`)}function Cs(t){[1,2,3].forEach(e=>{const n=document.getElementById(`panel${e}`),i=document.getElementById(`sn${e}`),s=document.getElementById(`sl${e}`);n&&(n.style.display=e===t?"block":"none"),i&&(i.className=`step-num ${e<t?"done":e===t?"active":"idle"}`,i.innerHTML=e<t?'<svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#F2EDE6" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>':e),s&&(s.className=`step-label ${e===t?"active":""}`)})}function ws(){var e,n,i,s,o,r,a,l;const t=[];for(let c=1;c<=N;c++){const h=(n=(e=document.querySelector(`.attendee-name[data-idx="${c}"]`))==null?void 0:e.value)==null?void 0:n.trim(),d=(s=(i=document.querySelector(`.attendee-phone[data-idx="${c}"]`))==null?void 0:i.value)==null?void 0:s.trim(),u=(r=(o=document.querySelector(`.attendee-email[data-idx="${c}"]`))==null?void 0:o.value)==null?void 0:r.trim(),p=(l=(a=document.querySelector(`.attendee-instagram[data-idx="${c}"]`))==null?void 0:a.value)==null?void 0:l.trim();if(!h||!d||!u)return null;t.push({name:h,phone:d,email:u,instagram:p})}return t}function du(t){var e,n,i;xn(),(e=document.getElementById("btn-plus"))==null||e.addEventListener("click",()=>{N<_.slotsRemaining&&(N++,xs(),xn())}),(n=document.getElementById("btn-minus"))==null||n.addEventListener("click",()=>{N>1&&(N--,xs(),xn())}),(i=document.getElementById("to-step2"))==null||i.addEventListener("click",()=>{if(!ws()){alert("Please fill in all required fields for each attendee.");return}Cs(2),window.scrollTo({top:0,behavior:"smooth"})}),document.addEventListener("click",async s=>{if(s.target.closest("#pay-btn")||s.target.id==="pay-btn"){const o=ws();if(!o)return;const r=yr(),a=N*_.price,l={workshopId:_.id,workshopTitle:_.title,workshopDate:_.date,workshopTime:_.time,outlet:_.outlet,hostName:_.hostName,tickets:N,totalAmount:a,paymentMode:_.paymentMode,bookingId:r,attendees:o,primaryAttendee:o[0]};try{const c=await Wh(l);_.paymentMode==="razorpay"&&_.razorpayLink&&window.open(_.razorpayLink,"_blank"),Cs(3),hu(c,a,r),window.scrollTo({top:0,behavior:"smooth"})}catch(c){alert("Something went wrong. Please try again."),console.error(c)}}})}function hu(t,e,n){const i=document.getElementById("confirm-card"),s=document.getElementById("confirm-actions"),o=_;if(i&&(i.innerHTML=`
+  `}function xn(){const t=document.getElementById("attendee-forms");t&&(t.innerHTML=Array.from({length:N},(e,n)=>cu(n+1,N)).join(""))}function xs(){const t=N*_.price,e=W(t),n=i=>document.getElementById(i);n("tcount")&&(n("tcount").textContent=N),n("tcount-lbl")&&(n("tcount-lbl").textContent=N),n("sum-tickets")&&(n("sum-tickets").textContent=N),n("sum-total")&&(n("sum-total").textContent=e),n("rp-ticket-line")&&(n("rp-ticket-line").textContent=`${N} ticket${N>1?"s":""} × ${W(_.price)}`),n("rp-total")&&(n("rp-total").textContent=e),n("qr-total")&&(n("qr-total").textContent=e),n("pay-btn-label")&&(n("pay-btn-label").textContent=`Pay ${e} via Razorpay →`)}function Cs(t){[1,2,3].forEach(e=>{const n=document.getElementById(`panel${e}`),i=document.getElementById(`sn${e}`),s=document.getElementById(`sl${e}`);n&&(n.style.display=e===t?"block":"none"),i&&(i.className=`step-num ${e<t?"done":e===t?"active":"idle"}`,i.innerHTML=e<t?'<svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#F2EDE6" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>':e),s&&(s.className=`step-label ${e===t?"active":""}`)})}function ws(){var e,n,i,s,o,r,a,l;const t=[];for(let c=1;c<=N;c++){const h=(n=(e=document.querySelector(`.attendee-name[data-idx="${c}"]`))==null?void 0:e.value)==null?void 0:n.trim(),d=(s=(i=document.querySelector(`.attendee-phone[data-idx="${c}"]`))==null?void 0:i.value)==null?void 0:s.trim(),u=(r=(o=document.querySelector(`.attendee-email[data-idx="${c}"]`))==null?void 0:o.value)==null?void 0:r.trim(),p=(l=(a=document.querySelector(`.attendee-instagram[data-idx="${c}"]`))==null?void 0:a.value)==null?void 0:l.trim();if(!h||!d||!u)return null;t.push({name:h,phone:d,email:u,instagram:p})}return t}function du(t){var e,n,i;xn(),(e=document.getElementById("btn-plus"))==null||e.addEventListener("click",()=>{N<_.slotsRemaining&&(N++,xs(),xn())}),(n=document.getElementById("btn-minus"))==null||n.addEventListener("click",()=>{N>1&&(N--,xs(),xn())}),(i=document.getElementById("to-step2"))==null||i.addEventListener("click",()=>{if(!ws()){alert("Please fill in all required fields for each attendee.");return}Cs(2),window.scrollTo({top:0,behavior:"smooth"})}),document.addEventListener("click",async s=>{if(s.target.closest("#pay-btn")||s.target.id==="pay-btn"){const o=ws();if(!o)return;const r=yr(),a=N*_.price,l={workshopId:_.id,workshopTitle:_.title,workshopDate:_.date,workshopTime:_.time,outlet:_.outlet,hostName:_.hostName,tickets:N,totalAmount:a,paymentMode:_.paymentMode,bookingId:r,attendees:o,primaryAttendee:o[0]};try{const c=await Wh(l);_.paymentMode==="razorpay"&&_.razorpayLink&&window.open(_.razorpayLink,"_blank"),Cs(3),hu(c,a,r),window.scrollTo({top:0,behavior:"smooth"})}catch(c){alert("Something went wrong. Please try again."),console.error(c)}}})}function hu(t,e,n){const i=document.getElementById("confirm-card"),s=document.getElementById("confirm-actions"),o=_;if(i&&(i.innerHTML=`
       <div class="summary-row"><span class="summary-key">Workshop</span><span class="summary-val">${o.title}</span></div>
       <div class="summary-row"><span class="summary-key">Date & Time</span><span class="summary-val">${ve(o.date)} · ${Me(o.time)}</span></div>
       <div class="summary-row"><span class="summary-key">Venue</span><span class="summary-val">${o.outlet}</span></div>
       <div class="summary-row"><span class="summary-key">Tickets</span><span class="summary-val">${N} slot${N>1?"s":""}</span></div>
-      <div class="summary-row"><span class="summary-key">Amount paid</span><span class="summary-val mono">${H(e)}</span></div>
+      <div class="summary-row"><span class="summary-key">Amount paid</span><span class="summary-val mono">${W(e)}</span></div>
       <div class="summary-row"><span class="summary-key">Booking ID</span><span class="summary-val id">${n}</span></div>
     `),s){const r=encodeURIComponent(`✅ Booking Confirmed — Heebee Sessions
 
@@ -2263,7 +2273,7 @@ Workshop: ${o.title}
 Date: ${ve(o.date)} · ${Me(o.time)}
 Venue: ${o.outlet}
 Tickets: ${N}
-Amount: ${H(e)}
+Amount: ${W(e)}
 Booking ID: ${n}
 
 See you there! ☕`),a="919876543210",l=`https://www.google.com/calendar/render?action=TEMPLATE&text=${encodeURIComponent(o.title+" — Heebee Sessions")}&dates=${o.date.replace(/-/g,"")}T${o.time.replace(":","")}00/${o.date.replace(/-/g,"")}T${o.time.replace(":","")}00&location=${encodeURIComponent(o.outlet)}`;s.innerHTML=`
@@ -2303,10 +2313,10 @@ See you there! ☕`),a="919876543210",l=`https://www.google.com/calendar/render?
   `}async function fu(t){t.innerHTML=pu(),gu()}function pu(){return`
     ${wt()}
 
-    <div style="display:grid;grid-template-columns:1fr 300px;gap:0;padding:0 48px;min-height:80vh;">
+    <div class="page-layout" style="display:grid;grid-template-columns:1fr 300px;gap:0;padding:0 48px;min-height:80vh;">
 
       <!-- FORM -->
-      <div style="padding:40px 40px 48px 0;" id="form-col">
+      <div class="page-content" style="padding:40px 40px 48px 0;" id="form-col">
         <p style="font-size:10px;letter-spacing:0.14em;text-transform:uppercase;color:#7C6F3E;margin-bottom:8px;">Host a session</p>
         <h1 style="font-size:32px;font-weight:200;color:#1A1410;letter-spacing:-0.02em;margin-bottom:8px;">Request to host<br>at Heebee</h1>
         <p style="font-size:13px;color:#6B5B4E;font-weight:300;line-height:1.75;max-width:440px;margin-bottom:28px;">
@@ -2412,7 +2422,7 @@ See you there! ☕`),a="919876543210",l=`https://www.google.com/calendar/render?
       </div>
 
       <!-- SIDEBAR -->
-      <div style="padding:40px 0 48px;">
+      <div class="page-sidebar" style="padding:40px 0 48px;">
         <!-- HOW IT WORKS -->
         <div style="background:#E8E0D5;border-radius:12px;padding:20px;margin-bottom:14px;position:relative;overflow:hidden;">
           <div style="position:absolute;inset:0;opacity:0.04;pointer-events:none;background-image:url('data:image/svg+xml,%3Csvg viewBox=%220 0 200 200%22 xmlns=%22http://www.w3.org/2000/svg%22%3E%3Cfilter id=%22n%22%3E%3CfeTurbulence type=%22fractalNoise%22 baseFrequency=%220.9%22 numOctaves=%224%22/%3E%3C/filter%3E%3Crect width=%22100%25%22 height=%22100%25%22 filter=%22url(%23n)%22/%3E%3C/svg%3E');background-size:200px;"></div>
@@ -2471,7 +2481,7 @@ See you there! ☕`),a="919876543210",l=`https://www.google.com/calendar/render?
     </div>
 
     ${cn()}
-  `}function gu(t){var e;(e=document.getElementById("submit-btn"))==null||e.addEventListener("click",async()=>{var r,a,l,c,h,d,u,p,g,E,x,z,Z,W,F,ge,Se,It,Te,wi;const n={name:(a=(r=document.getElementById("f-name"))==null?void 0:r.value)==null?void 0:a.trim(),phone:(c=(l=document.getElementById("f-phone"))==null?void 0:l.value)==null?void 0:c.trim(),email:(d=(h=document.getElementById("f-email"))==null?void 0:h.value)==null?void 0:d.trim(),instagram:(p=(u=document.getElementById("f-instagram"))==null?void 0:u.value)==null?void 0:p.trim(),background:(E=(g=document.getElementById("f-background"))==null?void 0:g.value)==null?void 0:E.trim(),topic:(z=(x=document.getElementById("f-topic"))==null?void 0:x.value)==null?void 0:z.trim(),description:(W=(Z=document.getElementById("f-description"))==null?void 0:Z.value)==null?void 0:W.trim(),category:(F=document.getElementById("f-category"))==null?void 0:F.value,price:(ge=document.getElementById("f-price"))==null?void 0:ge.value,outlet:(Se=document.getElementById("f-outlet"))==null?void 0:Se.value,date:(It=document.getElementById("f-date"))==null?void 0:It.value,notes:(wi=(Te=document.getElementById("f-notes"))==null?void 0:Te.value)==null?void 0:wi.trim()};if(["name","phone","email","background","topic","description","category","price","outlet"].filter(Ye=>!n[Ye]).length){alert("Please fill in all required fields.");return}const o=document.getElementById("submit-btn");o.querySelector(".lbl").textContent="Submitting...",o.disabled=!0;try{await Hh(n),document.getElementById("form-col").style.display="none";const Ye=document.getElementById("success-screen");Ye.style.display="flex"}catch(Ye){console.error(Ye),alert("Something went wrong. Please try again."),o.querySelector(".lbl").textContent="Submit Host Request →",o.disabled=!1}})}const Ne=document.getElementById("app"),mu=document.getElementById("loader");async function ur(){const{path:t,params:e}=_r();switch(Ne.innerHTML="",t){case"/workshop":await Zh(Ne,e.id);break;case"/book":await su(Ne,e.id);break;case"/confirmation":await uu(Ne,e);break;case"/host":await fu(Ne);break;default:await jh(Ne)}requestAnimationFrame(()=>{mr(),gr()})}function wt(t=""){return`
+  `}function gu(t){var e;(e=document.getElementById("submit-btn"))==null||e.addEventListener("click",async()=>{var r,a,l,c,h,d,u,p,g,E,x,z,Z,H,F,ge,Se,It,Te,wi;const n={name:(a=(r=document.getElementById("f-name"))==null?void 0:r.value)==null?void 0:a.trim(),phone:(c=(l=document.getElementById("f-phone"))==null?void 0:l.value)==null?void 0:c.trim(),email:(d=(h=document.getElementById("f-email"))==null?void 0:h.value)==null?void 0:d.trim(),instagram:(p=(u=document.getElementById("f-instagram"))==null?void 0:u.value)==null?void 0:p.trim(),background:(E=(g=document.getElementById("f-background"))==null?void 0:g.value)==null?void 0:E.trim(),topic:(z=(x=document.getElementById("f-topic"))==null?void 0:x.value)==null?void 0:z.trim(),description:(H=(Z=document.getElementById("f-description"))==null?void 0:Z.value)==null?void 0:H.trim(),category:(F=document.getElementById("f-category"))==null?void 0:F.value,price:(ge=document.getElementById("f-price"))==null?void 0:ge.value,outlet:(Se=document.getElementById("f-outlet"))==null?void 0:Se.value,date:(It=document.getElementById("f-date"))==null?void 0:It.value,notes:(wi=(Te=document.getElementById("f-notes"))==null?void 0:Te.value)==null?void 0:wi.trim()};if(["name","phone","email","background","topic","description","category","price","outlet"].filter(Ye=>!n[Ye]).length){alert("Please fill in all required fields.");return}const o=document.getElementById("submit-btn");o.querySelector(".lbl").textContent="Submitting...",o.disabled=!0;try{await Hh(n),document.getElementById("form-col").style.display="none";const Ye=document.getElementById("success-screen");Ye.style.display="flex"}catch(Ye){console.error(Ye),alert("Something went wrong. Please try again."),o.querySelector(".lbl").textContent="Submit Host Request →",o.disabled=!1}})}const Ne=document.getElementById("app"),mu=document.getElementById("loader");async function ur(){const{path:t,params:e}=_r();switch(Ne.innerHTML="",t){case"/workshop":await Zh(Ne,e.id);break;case"/book":await su(Ne,e.id);break;case"/confirmation":await uu(Ne,e);break;case"/host":await fu(Ne);break;default:await jh(Ne)}requestAnimationFrame(()=>{mr(),gr()})}function wt(t=""){return`
     <nav class="nav">
       <div class="nav-logo" onclick="navigate('/')" style="cursor:pointer;">Heebee Coffee</div>
       <div class="nav-links">
