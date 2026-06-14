@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Heebee Sessions — Workshops & Events</title>
+  <meta name="description" content="Curated workshops, talks and experiences at Heebee Coffee — Ludhiana & Jalandhar">
+  <meta name="theme-color" content="#F2EDE6">
+  <link rel="icon" href="/favicon.ico">
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@200;300;400;500;600&family=DM+Mono:wght@400&display=swap" rel="stylesheet">
+  <script src="https://unpkg.com/@dotlottie/player-component@latest/dist/dotlottie-player.js"></script>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { font-size: 16px; }
+    body { font-family: 'Outfit', sans-serif; background: #F2EDE6; color: #1A1410; -webkit-font-smoothing: antialiased; }
+    #loader { position: fixed; inset: 0; background: #F2EDE6; display: flex; flex-direction: column; align-items: center; justify-content: center; z-index: 1000; transition: opacity 0.6s ease; }
+    #loader.hidden { opacity: 0; pointer-events: none; }
+    #loader p { font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase; color: #6B5B4E; margin-top: 16px; }
+    #app { min-height: 100vh; }
+  </style>
+</head>
+<body>
+<div id="loader">
+  <dotlottie-player src="https://lottie.host/5070b382-1128-464b-92f0-98701ca02d26/vW7gdBWczl.lottie" background="transparent" speed="1" style="width:140px;height:140px;" loop autoplay></dotlottie-player>
+  <p>Loading sessions</p>
+</div>
+<div id="app"></div>
+<script type="module" src="/src/main.js"></script>
+</body>
+</html>

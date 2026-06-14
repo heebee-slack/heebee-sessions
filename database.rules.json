@@ -1,0 +1,35 @@
+{
+  "rules": {
+    "workshops": {
+      ".read": true,
+      ".write": false,
+      "$workshopId": {
+        ".write": false
+      }
+    },
+    "bookings": {
+      ".read": false,
+      ".write": true,
+      "$bookingId": {
+        ".read": false,
+        ".write": true
+      }
+    },
+    "host_requests": {
+      ".read": false,
+      ".write": true
+    },
+    "hosts": {
+      ".read": true,
+      ".write": false
+    },
+    "categories": {
+      ".read": true,
+      ".write": false
+    },
+    "config": {
+      ".read": true,
+      ".write": false
+    }
+  }
+}
