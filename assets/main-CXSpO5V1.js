@@ -2015,9 +2015,9 @@ ${this.customData.serverResponse}`:this.message=this._baseMessage}}var Q;(functi
               <p style="font-size:10px;color:#6B5B4E;margin-top:3px;">Registration opens soon</p>
             </div>
           `:e?`
-            <button class="btn-cta" style="width:100%;justify-content:center;margin-bottom:8px;" onclick="window.open('${o}','_blank')">
+            <a href="${o}" target="_blank" class="btn-cta" style="width:100%;justify-content:center;margin-bottom:8px;text-decoration:none;">
               <div class="ink"></div><span>Join Waitlist</span>
-            </button>
+            </a>
           `:`
             <button class="btn-cta" style="width:100%;justify-content:center;margin-bottom:8px;" onclick="navigate('/book?id=${t.id}')">
               <div class="ink"></div><span>Book Your Slot</span>
@@ -2054,7 +2054,7 @@ ${this.customData.serverResponse}`:this.message=this._baseMessage}}var Q;(functi
         <div class="mobile-book-bar-price">${W(t.price)}</div>
         <div class="mobile-book-bar-slots">${e?"Fully booked":`${t.slotsRemaining} slots left`}</div>
       </div>
-      ${e?`<button class="btn-cta btn-sm" onclick="window.open('${o}','_blank')"><div class="ink"></div><span>Join Waitlist</span></button>`:`<button class="btn-cta btn-sm" onclick="navigate('/book?id=${t.id}')"><div class="ink"></div><span>Book Your Slot</span></button>`}
+      ${e?`<a href="${o}" target="_blank" class="btn-cta btn-sm" style="text-decoration:none;"><div class="ink"></div><span>Join Waitlist</span></a>`:`<button class="btn-cta btn-sm" onclick="navigate('/book?id=${t.id}')"><div class="ink"></div><span>Book Your Slot</span></button>`}
     </div>`}
 
     ${cn()}
